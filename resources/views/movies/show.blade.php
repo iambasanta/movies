@@ -4,9 +4,9 @@
 <!--start movie info section-->
 <div class="border-b border-gray-800 movie-info">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-        <img src="{{ $movie['poster_path'] }}" alt="parasite" class="w-64 md:w-96">
+        <img src="{{ $movie['poster_path'] }}" alt="poster" class="w-64 md:w-96">
         <div class="md:ml-24">
-            <h2 class="text-4xl">{{$movie['title']}}</h2>
+            <h2 class="text-4xl mt-4 md:mt-0 font-semibold">{{$movie['title']}}</h2>
             <div class="flex flex-wrap items-center text-sm text-gray-400">
                 <svg class="w-4 text-yellow-500 fill-current" viewBox="0 0 24 24">
                     <g data-name="Layer 2">
@@ -82,11 +82,11 @@
 
             @foreach($movie['cast'] as $cast)
             <div class="mt-8">
-                <a href="#">
+                <a href="{{ route('actors.show',$cast['id']) }}">
                     <img src="{{ 'https://image.tmdb.org/t/p/w500/'.$cast['profile_path'] }}" alt="actor" class="hover:opacity-75 transition ease-in-out duration-150">
                 </a>
                 <div class="mt-2">
-                    <a href="" class="mt-2 text-lg hover:text-gray-300">{{$cast['name']}}</a>
+                    <a href="{{ route('actors.show',$cast['id']) }}" class="mt-2 text-lg hover:text-gray-300">{{$cast['name']}}</a>
                     <div class="text-sm text-gray-400">
                         {{$cast['character']}}
                     </div>

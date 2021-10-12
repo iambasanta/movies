@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ViewMoviesTest extends TestCase
 {
     /** @test */
-    public function the_main_page_shows_correct_info()
+    public function the_index_page_shows_the_correct_info()
     {
         Http::fake([
             'https://api.themoviedb.org/3/movie/popular' => $this->fakePopularMovies(),

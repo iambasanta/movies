@@ -8,7 +8,7 @@ use Tests\TestCase;
 class ViewMovieTest extends TestCase
 {
     /** @test */
-    public function the_main_movie_show_page_shows_correct_info()
+    public function the_movie_show_page_shows_correct_info()
     {
         Http::fake([
             'https://api.themoviedb.org/3/movie/*' => $this->fakeSingleMovie(),
